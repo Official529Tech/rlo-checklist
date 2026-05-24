@@ -43,8 +43,8 @@ The system is deployed in **[FlyEnJoy](https://apps.apple.com/app/id6745104853)*
 ## Setup
 
 ```bash
-git clone https://github.com/529tech/packing-checklist.git
-cd packing-checklist
+git clone https://github.com/Official529Tech/rlo-checklist.git
+cd rlo-checklist
 pip install -r requirements.txt
 ```
 
