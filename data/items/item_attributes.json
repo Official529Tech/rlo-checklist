@@ -1,0 +1,241 @@
+{
+  "attributes": {
+    "DOC-PASSPORT": {
+      "weight_grams": 30,
+      "volume_ml": 50,
+      "price": 0
+    },
+    "DOC-ID": {
+      "weight_grams": 5,
+      "volume_ml": 10,
+      "price": 0
+    },
+    "DOC-VISA": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "price": 0
+    },
+    "DOC-BOOKING": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "price": 0
+    },
+    "DOC-INSURANCE": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "price": 0
+    },
+    "DOC-ITINERARY": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "price": 0
+    },
+    "CLO-UNDERWEAR": {
+      "weight_grams": 50,
+      "volume_ml": 200,
+      "price": 15
+    },
+    "CLO-SOCKS": {
+      "weight_grams": 40,
+      "volume_ml": 150,
+      "price": 10
+    },
+    "CLO-TSHIRT": {
+      "weight_grams": 150,
+      "volume_ml": 500,
+      "price": 20
+    },
+    "CLO-PANTS": {
+      "weight_grams": 400,
+      "volume_ml": 1500,
+      "price": 40
+    },
+    "CLO-DRESS-SHIRT": {
+      "weight_grams": 200,
+      "volume_ml": 700,
+      "price": 35
+    },
+    "CLO-SLEEPWEAR": {
+      "weight_grams": 250,
+      "volume_ml": 900,
+      "price": 30
+    },
+    "PER-TOOTHBRUSH": {
+      "weight_grams": 20,
+      "volume_ml": 50,
+      "price": 3
+    },
+    "PER-TOOTHPASTE": {
+      "weight_grams": 100,
+      "volume_ml": 100,
+      "price": 4
+    },
+    "PER-FACEWASH": {
+      "weight_grams": 100,
+      "volume_ml": 100,
+      "price": 8
+    },
+    "PER-DEODORANT": {
+      "weight_grams": 80,
+      "volume_ml": 85,
+      "price": 5
+    },
+    "PER-GLASSES": {
+      "weight_grams": 30,
+      "volume_ml": 200,
+      "price": 150
+    },
+    "PER-DENTAL-FLOSS": {
+      "weight_grams": 20,
+      "volume_ml": 40,
+      "price": 4
+    },
+    "ELE-PHONE-HANDSET": {
+      "weight_grams": 180,
+      "volume_ml": 100,
+      "price": 800
+    },
+    "ELE-PHONE-CHARGER": {
+      "weight_grams": 120,
+      "volume_ml": 150,
+      "price": 20
+    },
+    "ELE-PHONE-CABLE": {
+      "weight_grams": 30,
+      "volume_ml": 50,
+      "price": 15
+    },
+    "ELE-LAPTOP-DEVICE": {
+      "weight_grams": 1400,
+      "volume_ml": 2500,
+      "price": 1200
+    },
+    "ELE-POWER": {
+      "weight_grams": 300,
+      "volume_ml": 250,
+      "price": 40
+    },
+    "ELE-HEADPHONES": {
+      "weight_grams": 200,
+      "volume_ml": 300,
+      "price": 150
+    },
+    "MED-OTC": {
+      "weight_grams": 150,
+      "volume_ml": 250,
+      "price": 20
+    },
+    "MED-FIRSTAID": {
+      "weight_grams": 200,
+      "volume_ml": 400,
+      "price": 25
+    },
+    "MED-SANITIZER": {
+      "weight_grams": 100,
+      "volume_ml": 100,
+      "price": 3
+    },
+    "MED-BANDAIDS": {
+      "weight_grams": 40,
+      "volume_ml": 80,
+      "price": 5
+    },
+    "MED-PAIN": {
+      "weight_grams": 60,
+      "volume_ml": 100,
+      "price": 8
+    },
+    "MED-SLEEP-AID": {
+      "weight_grams": 40,
+      "volume_ml": 80,
+      "price": 12
+    },
+    "TRV-LUGGAGE": {
+      "weight_grams": 3000,
+      "volume_ml": 0,
+      "price": 150
+    },
+    "TRV-WALLET": {
+      "weight_grams": 100,
+      "volume_ml": 150,
+      "price": 30
+    },
+    "TRV-CARD": {
+      "weight_grams": 5,
+      "volume_ml": 5,
+      "price": 0
+    },
+    "TRV-WATER": {
+      "weight_grams": 150,
+      "volume_ml": 500,
+      "price": 15
+    },
+    "TRV-SNACKS": {
+      "weight_grams": 200,
+      "volume_ml": 400,
+      "price": 10
+    },
+    "ACT-HIKING-BOOTS": {
+      "weight_grams": 1200,
+      "volume_ml": 4000,
+      "price": 120
+    },
+    "ACT-HIKING-PACK": {
+      "weight_grams": 600,
+      "volume_ml": 0,
+      "price": 80
+    },
+    "ACT-GYM": {
+      "weight_grams": 500,
+      "volume_ml": 1500,
+      "price": 50
+    },
+    "ACT-YOGA": {
+      "weight_grams": 800,
+      "volume_ml": 2000,
+      "price": 40
+    },
+    "ACT-BOOK": {
+      "weight_grams": 400,
+      "volume_ml": 800,
+      "price": 15
+    },
+    "ACT-GAMES": {
+      "weight_grams": 100,
+      "volume_ml": 150,
+      "price": 10
+    }
+  },
+  "luggage_capacities": {
+    "Personal": {
+      "max_weight_kg": 5,
+      "max_volume_liters": 20,
+      "dimensions_cm": [
+        40,
+        30,
+        15
+      ],
+      "description": "Small bag that fits under seat"
+    },
+    "Carry-on": {
+      "max_weight_kg": 10,
+      "max_volume_liters": 40,
+      "dimensions_cm": [
+        56,
+        36,
+        23
+      ],
+      "description": "Overhead bin roller bag"
+    },
+    "Checked": {
+      "max_weight_kg": 23,
+      "max_volume_liters": 80,
+      "dimensions_cm": [
+        76,
+        52,
+        30
+      ],
+      "description": "Standard checked suitcase"
+    }
+  }
+}

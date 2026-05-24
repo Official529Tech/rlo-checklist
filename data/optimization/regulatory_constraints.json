@@ -1,0 +1,6 @@
+{
+  "_note": "Example constraints only.",
+  "version": "1.0",
+  "description": "Regulatory constraints (hard constraints) based on FAA/TSA regulations",
+  "source": "TSA.gov, FAA regulations"
+}

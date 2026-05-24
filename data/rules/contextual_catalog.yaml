@@ -1,0 +1,76 @@
+rules:
+- id: rule.accommodation.family.host_courtesy.v1
+  family: contextual
+  priority: 112
+  confidence: 0.75
+  enabled: true
+  metadata:
+    generalization_class: courtesy
+    evidence_type: cultural_norms
+    context_keys:
+    - accommodation
+  description: Staying with family/friends requires courtesy items
+  when:
+  - field: context.accommodation
+    operator: ==
+    value: With Family or Friends
+  then:
+    emit_items:
+    - item_id: TRV-HOST-GIFT
+      criticality: recommended
+      placement: any
+      flags:
+      - courtesy
+      - family
+      - gift
+      reason: Staying with hosts - bring thoughtful gift as thank you
+    emit_facts:
+    - predicate: staying_with_hosts
+      args:
+      - true
+- id: rule.accommodation.family.extra_toiletries_optional.v1
+  family: contextual
+  priority: 105
+  confidence: 0.6
+  enabled: true
+  metadata:
+    generalization_class: convenience
+    evidence_type: common_sense
+    context_keys:
+    - accommodation
+    - duration_days
+  description: Family stays may have basic toiletries available
+  when:
+    all:
+    - field: context.accommodation
+      operator: ==
+      value: With Family or Friends
+    - field: context.duration_days
+      operator: <=
+      value: 3
+  then:
+    emit_facts:
+    - predicate: may_have_basic_toiletries
+      args:
+      - true
+- id: rule.accommodation.hotel.minimal_toiletries.v1
+  family: contextual
+  priority: 108
+  confidence: 0.7
+  enabled: true
+  metadata:
+    generalization_class: convenience
+    evidence_type: common_sense
+    context_keys:
+    - accommodation
+  description: Hotels provide basic toiletries
+  when:
+  - field: context.accommodation
+    operator: ==
+    value: Hotel or Resort
+  then:
+    emit_facts:
+    - predicate: hotel_provides_toiletries
+      args:
+      - true
+_note: Example rules only (3 of 37). Full rule catalog not released.

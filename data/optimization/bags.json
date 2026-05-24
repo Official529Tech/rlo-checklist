@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "description": "Bag specifications for constraint-aware packing optimization",
+  "bags": {
+    "personal": {
+      "bag_id": "personal",
+      "name": "Personal Item",
+      "description": "Small bag that fits under the seat (backpack, purse, laptop bag)",
+      "dimensions_cm": {
+        "length": 40,
+        "width": 30,
+        "height": 15
+      },
+      "max_weight_kg": 5.0,
+      "max_volume_liters": 18.0,
+      "packing_efficiency": 0.85,
+      "loss_probability": 0.005,
+      "accessibility": "immediate",
+      "environment": {
+        "temperature_controlled": true,
+        "pressure_controlled": true,
+        "humidity_controlled": true
+      },
+      "notes": "Always with passenger, lowest loss risk, immediate access during flight"
+    },
+    "carry_on": {
+      "bag_id": "carry_on",
+      "name": "Carry-On Bag",
+      "description": "Overhead bin roller bag or duffel",
+      "dimensions_cm": {
+        "length": 56,
+        "width": 36,
+        "height": 23
+      },
+      "max_weight_kg": 10.0,
+      "max_volume_liters": 40.0,
+      "packing_efficiency": 0.8,
+      "loss_probability": 0.015,
+      "accessibility": "limited",
+      "environment": {
+        "temperature_controlled": true,
+        "pressure_controlled": true,
+        "humidity_controlled": true
+      },
+      "notes": "Overhead bin, accessible but limited during flight"
+    },
+    "checked": {
+      "bag_id": "checked",
+      "name": "Checked Baggage",
+      "description": "Standard checked suitcase in cargo hold",
+      "dimensions_cm": {
+        "length": 76,
+        "width": 52,
+        "height": 30
+      },
+      "max_weight_kg": 23.0,
+      "max_volume_liters": 80.0,
+      "packing_efficiency": 0.75,
+      "loss_probability": 0.05,
+      "accessibility": "none",
+      "environment": {
+        "temperature_controlled": false,
+        "pressure_controlled": false,
+        "humidity_controlled": false
+      },
+      "notes": "Cargo hold - extreme temps (-40C to +50C), pressure changes, higher loss risk"
+    }
+  },
+  "bag_combinations": {
+    "carry_on_only": {
+      "description": "Traveling with carry-on and personal item only",
+      "bags": [
+        "personal",
+        "carry_on"
+      ],
+      "typical_use": "Short trips (1-5 days), budget airlines, avoiding baggage fees"
+    },
+    "full_luggage": {
+      "description": "Full luggage set with checked bag",
+      "bags": [
+        "personal",
+        "carry_on",
+        "checked"
+      ],
+      "typical_use": "Longer trips, international travel, bulky items needed"
+    },
+    "minimal": {
+      "description": "Personal item only",
+      "bags": [
+        "personal"
+      ],
+      "typical_use": "Day trips, ultra-light travel"
+    }
+  }
+}

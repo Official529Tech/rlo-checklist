@@ -1,0 +1,128 @@
+rules:
+- id: rule.demographic.age.adult.comfort.v1
+  family: traveler
+  priority: 108
+  confidence: 0.7
+  enabled: true
+  metadata:
+    generalization_class: comfort
+    evidence_type: common_sense
+    context_keys:
+    - age
+    - travelType
+  description: Adults benefit from comfort items on long trips
+  when:
+    all:
+    - field: context.age
+      operator: '>='
+      value: 26
+    - field: context.age
+      operator: <=
+      value: 64
+    - field: context.travelType
+      operator: ==
+      value: International
+  then:
+    emit_items:
+    - item_id: TRV-PILLOW
+      criticality: optional
+      placement: carry_on
+      flags:
+      - adult
+      - comfort
+      - age_specific
+      reason: International travel - neck pillow for comfort on long flights
+    - item_id: ELE-KINDLE
+      criticality: optional
+      placement: carry_on
+      flags:
+      - adult
+      - entertainment
+      - age_specific
+      reason: Long flight - e-reader for entertainment
+- id: rule.demographic.age.child.entertainment.v1
+  family: traveler
+  priority: 118
+  confidence: 0.85
+  enabled: true
+  metadata:
+    generalization_class: child_care
+    evidence_type: expert_knowledge
+    context_keys:
+    - special_needs
+  description: Children need entertainment for long trips
+  when:
+  - field: facts
+    operator: contains_fact
+    value:
+      predicate: has_special_need
+      args:
+      - Children
+  then:
+    emit_items:
+    - item_id: TRV-COLORING-BOOKS
+      criticality: optional
+      placement: carry_on
+      flags:
+      - child
+      - entertainment
+      - age_specific
+      reason: Child - coloring books and crayons for entertainment
+    - item_id: TRV-KIDS-TOYS
+      criticality: optional
+      placement: carry_on
+      flags:
+      - child
+      - entertainment
+      - age_specific
+      reason: Child - small toys or games for entertainment
+- id: rule.demographic.age.infant.comfort_items.v1
+  family: traveler
+  priority: 120
+  confidence: 0.9
+  enabled: true
+  metadata:
+    generalization_class: child_care
+    evidence_type: expert_knowledge
+    context_keys:
+    - age
+    - special_needs
+  description: Infants need specific comfort and transport items
+  when:
+    any:
+    - field: context.age
+      operator: <=
+      value: 2
+    - field: facts
+      operator: contains_fact
+      value:
+        predicate: has_special_need
+        args:
+        - Infant
+  then:
+    emit_items:
+    - item_id: TRV-PACIFIER
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - infant
+      - comfort
+      - age_specific
+      reason: Infant - pacifier for comfort and ear pressure relief during flights
+    - item_id: TRV-BABY-CARRIER
+      criticality: recommended
+      placement: any
+      flags:
+      - infant
+      - convenience
+      - age_specific
+      reason: Infant - baby carrier for hands-free transport
+    - item_id: TRV-STROLLER
+      criticality: optional
+      placement: checked
+      flags:
+      - infant
+      - convenience
+      - age_specific
+      reason: Infant - compact stroller for easier navigation
+_note: Example rules only (3 of 30). Full rule catalog not released.

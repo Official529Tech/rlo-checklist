@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+models/
+results/
+plots/
+notebooks/plots/
+.DS_Store
+*.egg-info/
+.ipynb_checkpoints/

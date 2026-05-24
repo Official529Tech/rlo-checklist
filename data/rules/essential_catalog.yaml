@@ -1,0 +1,74 @@
+rules:
+- id: rule.essentials.underwear_all_trips.v1
+  family: essential
+  priority: 165
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: essential
+    evidence_type: common_sense
+    context_keys:
+    - duration_days
+  description: Underwear is essential for all trips
+  when:
+  - field: context.duration_days
+    operator: '>='
+    value: 1
+  then:
+    emit_items:
+    - item_id: CLO-UNDERWEAR
+      criticality: mandatory
+      placement: any
+      flags:
+      - essential
+      - clothing
+      reason: Underwear essential - pack at least n+1 pairs for n days
+- id: rule.essentials.socks_all_trips.v1
+  family: essential
+  priority: 163
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: essential
+    evidence_type: common_sense
+    context_keys:
+    - duration_days
+  description: Socks are essential for all trips
+  when:
+  - field: context.duration_days
+    operator: '>='
+    value: 1
+  then:
+    emit_items:
+    - item_id: CLO-SOCKS
+      criticality: mandatory
+      placement: any
+      flags:
+      - essential
+      - clothing
+      reason: Socks essential - pack at least n+1 pairs for n days
+- id: rule.essentials.shirts_all_trips.v1
+  family: essential
+  priority: 160
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: essential
+    evidence_type: common_sense
+    context_keys:
+    - duration_days
+  description: Shirts/tops are essential for all trips
+  when:
+  - field: context.duration_days
+    operator: '>='
+    value: 1
+  then:
+    emit_items:
+    - item_id: CLO-TSHIRT
+      criticality: mandatory
+      placement: any
+      flags:
+      - essential
+      - clothing
+      reason: Shirts/tops essential - pack enough for trip duration
+_note: Example rules only (3 of 24). Full rule catalog not released.

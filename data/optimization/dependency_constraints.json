@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "description": "Inter-item dependency constraints - must-together and must-separate groups",
+  "_note": "Example constraints only.",
+  "must_together_groups": {
+    "description": "Items that must be placed in the same bag to preserve functionality",
+    "constraint_type": "hard",
+    "groups": [
+      {
+        "group_id": "camera_core",
+        "name": "Camera Core Equipment",
+        "items": [
+          "ELE-CAM-BODY",
+          "ELE-CAM-BATT",
+          "ELE-CAM-MEM"
+        ],
+        "reason": "Camera body is useless without battery and memory card",
+        "notes": "If user packs camera, all three must be together"
+      },
+      {
+        "group_id": "camera_extended",
+        "name": "Camera Extended Kit",
+        "items": [
+          "ELE-CAM-BODY",
+          "ELE-CAM-CHARGER"
+        ],
+        "reason": "Charger needed for multi-day trips with camera",
+        "condition": "duration_days >= 2"
+      }
+    ]
+  },
+  "must_separate_groups": {
+    "description": "Items that should NOT be placed in the same bag due to risk or contamination",
+    "constraint_type": "soft",
+    "groups": [
+      {
+        "group_id": "liquids_electronics",
+        "name": "Liquids vs Electronics",
+        "sets": [
+          [
+            "PER-SHAMPOO",
+            "PER-CONDITIONER",
+            "PER-TOOTHPASTE",
+            "PER-SUNSCREEN",
+            "MED-SANITIZER"
+          ],
+          [
+            "ELE-LAPTOP-DEVICE",
+            "ELE-CAM-BODY",
+            "ELE-PHONE-HANDSET"
+          ]
+        ],
+        "reason": "Liquid spillage can damage electronics",
+        "penalty": 30,
+        "notes": "At most one item from each set should share a bag"
+      },
+      {
+        "group_id": "liquids_formal_clothing",
+        "name": "Liquids vs Formal Clothing",
+        "sets": [
+          [
+            "PER-SHAMPOO",
+            "PER-CONDITIONER",
+            "PER-COSMETICS"
+          ],
+          [
+            "CLO-DRESS-SHIRT",
+            "CLO-DRESS-PANTS",
+            "CLO-SHOES-DRESS"
+          ]
+        ],
+        "reason": "Liquid spillage can stain formal attire",
+        "penalty": 25
+      }
+    ]
+  },
+  "conditional_dependencies": []
+}

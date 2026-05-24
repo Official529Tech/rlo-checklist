@@ -1,0 +1,146 @@
+rules:
+- id: rule.activity.business.formal_attire.v1
+  family: activities
+  priority: 135
+  confidence: 0.95
+  enabled: true
+  metadata:
+    generalization_class: activity_equipment
+    evidence_type: professional_standards
+    context_keys:
+    - purpose
+    - formal_events
+  description: Business travel requires professional attire
+  when:
+    any:
+    - field: context.purpose
+      operator: in
+      value:
+      - Business
+      - Work
+    - field: context.formal_events
+      operator: ==
+      value: true
+  then:
+    emit_items:
+    - item_id: CLO-DRESS-SHIRT
+      criticality: recommended
+      placement: any
+      flags:
+      - business
+      - formal
+      reason: Business travel - professional dress shirt required
+    - item_id: CLO-DRESS-PANTS
+      criticality: recommended
+      placement: any
+      flags:
+      - business
+      - formal
+      reason: Business travel - professional dress pants required
+    - item_id: CLO-SHOES-DRESS
+      criticality: recommended
+      placement: any
+      flags:
+      - business
+      - formal
+      reason: Business travel - dress shoes for professional appearance
+    - item_id: CLO-JACKET
+      criticality: optional
+      placement: any
+      flags:
+      - business
+      - formal
+      reason: Business travel - blazer or jacket for formal meetings
+- id: rule.activity.business.laptop_required.v1
+  family: activities
+  priority: 140
+  confidence: 0.98
+  enabled: true
+  metadata:
+    generalization_class: essential_equipment
+    evidence_type: professional_standards
+    context_keys:
+    - purpose
+  description: Business travel typically requires laptop
+  when:
+  - field: context.purpose
+    operator: in
+    value:
+    - Business
+    - Work
+  then:
+    emit_items:
+    - item_id: ELE-LAPTOP-DEVICE
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - business
+      - electronics
+      - laptop_essentials
+      reason: Business travel - laptop device essential for work
+    - item_id: ELE-LAPTOP-CHARGER
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - business
+      - electronics
+      - laptop_essentials
+      reason: Business travel - laptop charger required
+    - item_id: ELE-LAPTOP-CABLE
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - business
+      - electronics
+      - laptop_essentials
+      reason: Business travel - laptop cable for connectivity
+    emit_facts:
+    - predicate: selected
+      args:
+      - ELE-LAPTOP-DEVICE
+- id: rule.activity.photography.camera_gear.v1
+  family: activities
+  priority: 125
+  confidence: 0.85
+  enabled: true
+  metadata:
+    generalization_class: activity_equipment
+    evidence_type: expert_knowledge
+    context_keys:
+    - activities
+  description: Photography activities require camera equipment
+  when:
+  - field: context.activities
+    operator: contains
+    value: photography
+  then:
+    emit_items:
+    - item_id: ELE-CAMERA-BODY
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - photography
+      - electronics
+      - camera_essentials
+      reason: Photography activity - camera body for capturing memories
+    - item_id: ELE-CAMERA-CHARGER
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - photography
+      - electronics
+      - camera_essentials
+      reason: Photography activity - camera charger essential
+    - item_id: ELE-MEMORY-CARD
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - photography
+      - electronics
+      - camera_essentials
+      reason: Photography activity - extra memory cards for storage
+    emit_facts:
+    - predicate: selected
+      args:
+      - ELE-CAMERA-BODY
+_note: Example rules only (3 of 28). Full rule catalog not released.

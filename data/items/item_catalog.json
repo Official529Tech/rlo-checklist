@@ -1,0 +1,356 @@
+{
+  "categories": {
+    "DOC": {
+      "category": "Documents",
+      "items": {
+        "DOC-ID": {
+          "item_id": "DOC-ID",
+          "item": "Government ID",
+          "description": "Driver's license or state-issued ID",
+          "item_symbol": "person.crop.square",
+          "criticality": "mandatory"
+        },
+        "DOC-INSURANCE": {
+          "item_id": "DOC-INSURANCE",
+          "item": "Travel Insurance",
+          "description": "Travel insurance policy documents",
+          "item_symbol": "shield.fill",
+          "criticality": "recommended"
+        },
+        "DOC-BOOKING": {
+          "item_id": "DOC-BOOKING",
+          "item": "Booking Confirmations",
+          "description": "Flight, hotel, rental car confirmations",
+          "item_symbol": "ticket.fill",
+          "criticality": "recommended"
+        },
+        "DOC-PASSPORT": {
+          "item_id": "DOC-PASSPORT",
+          "item": "Passport",
+          "description": "International travel passport (must be valid 6+ months)",
+          "item_symbol": "book.fill",
+          "criticality": "mandatory"
+        },
+        "DOC-VISA": {
+          "item_id": "DOC-VISA",
+          "item": "Visa Documents",
+          "description": "Visa or visa documentation if required",
+          "item_symbol": "doc.fill",
+          "criticality": "mandatory"
+        },
+        "DOC-ITINERARY": {
+          "item_id": "DOC-ITINERARY",
+          "item": "Travel Itinerary",
+          "description": "Detailed travel itinerary",
+          "item_symbol": "list.bullet.rectangle",
+          "criticality": "recommended"
+        }
+      }
+    },
+    "CLO": {
+      "category": "Clothing",
+      "items": {
+        "CLO-SOCKS": {
+          "item_id": "CLO-SOCKS",
+          "item": "Socks",
+          "description": "Socks (regular or wool for cold weather)",
+          "item_symbol": "figure.walk",
+          "criticality": "mandatory"
+        },
+        "CLO-UNDERWEAR": {
+          "item_id": "CLO-UNDERWEAR",
+          "item": "Underwear",
+          "description": "Underwear (pack n+1 for n days)",
+          "item_symbol": "tshirt.fill",
+          "criticality": "mandatory"
+        },
+        "CLO-TSHIRT": {
+          "item_id": "CLO-TSHIRT",
+          "item": "Casual Tops",
+          "description": "Casual shirts and tops",
+          "item_symbol": "tshirt",
+          "criticality": "recommended"
+        },
+        "CLO-PANTS": {
+          "item_id": "CLO-PANTS",
+          "item": "Casual pants",
+          "description": "Casual pants or jeans",
+          "item_symbol": "figure.stand",
+          "criticality": "recommended"
+        },
+        "CLO-SLEEPWEAR": {
+          "item_id": "CLO-SLEEPWEAR",
+          "item": "Sleepwear",
+          "description": "Sleepwear or pajamas",
+          "item_symbol": "circle.fill",
+          "criticality": "recommended"
+        },
+        "CLO-DRESS-SHIRT": {
+          "item_id": "CLO-DRESS-SHIRT",
+          "item": "Dress Shirt",
+          "description": "Business dress shirt",
+          "item_symbol": "suit.fill",
+          "criticality": "recommended"
+        }
+      }
+    },
+    "PER": {
+      "category": "Personal Care",
+      "items": {
+        "PER-TOOTHBRUSH": {
+          "item_id": "PER-TOOTHBRUSH",
+          "item": "Toothbrush",
+          "description": "Toothbrush",
+          "item_symbol": "mouth.fill",
+          "criticality": "mandatory",
+          "display_group": "basic_toiletries"
+        },
+        "PER-TOOTHPASTE": {
+          "item_id": "PER-TOOTHPASTE",
+          "item": "Toothpaste",
+          "description": "Toothpaste (travel size for carry-on)",
+          "item_symbol": "drop.fill",
+          "criticality": "mandatory",
+          "display_group": "basic_toiletries",
+          "flags": [
+            "tsa_liquid"
+          ]
+        },
+        "PER-DEODORANT": {
+          "item_id": "PER-DEODORANT",
+          "item": "Deodorant",
+          "description": "Deodorant or antiperspirant",
+          "item_symbol": "wind",
+          "criticality": "mandatory",
+          "flags": [
+            "tsa_liquid"
+          ]
+        },
+        "PER-FACEWASH": {
+          "item_id": "PER-FACEWASH",
+          "item": "Face Wash",
+          "description": "Facial cleanser (travel size for carry-on)",
+          "item_symbol": "drop.triangle.fill",
+          "criticality": "recommended",
+          "display_group": "basic_toiletries",
+          "flags": [
+            "tsa_liquid"
+          ]
+        },
+        "PER-DENTAL-FLOSS": {
+          "item_id": "PER-DENTAL-FLOSS",
+          "item": "Dental Floss",
+          "description": "Dental floss for oral hygiene",
+          "item_symbol": "line.3.horizontal",
+          "criticality": "recommended"
+        },
+        "PER-GLASSES": {
+          "item_id": "PER-GLASSES",
+          "item": "Eyeglasses",
+          "description": "Prescription glasses or sunglasses",
+          "item_symbol": "eyeglasses",
+          "criticality": "recommended"
+        }
+      }
+    },
+    "ELE": {
+      "category": "Electronics",
+      "items": {
+        "ELE-PHONE-HANDSET": {
+          "item_id": "ELE-PHONE-HANDSET",
+          "item": "Phone",
+          "description": "Primary mobile phone",
+          "item_symbol": "iphone",
+          "criticality": "mandatory",
+          "display_group": "phone_essentials"
+        },
+        "ELE-PHONE-CHARGER": {
+          "item_id": "ELE-PHONE-CHARGER",
+          "item": "Phone Charger",
+          "description": "Wall charger/charging brick",
+          "item_symbol": "bolt.fill",
+          "criticality": "mandatory",
+          "display_group": "phone_essentials"
+        },
+        "ELE-HEADPHONES": {
+          "item_id": "ELE-HEADPHONES",
+          "item": "Headphones",
+          "description": "Headphones or wireless earbuds",
+          "item_symbol": "headphones",
+          "criticality": "optional"
+        },
+        "ELE-PHONE-CABLE": {
+          "item_id": "ELE-PHONE-CABLE",
+          "item": "Phone Charging Cable",
+          "description": "USB-C or Lightning cable",
+          "item_symbol": "cable.connector",
+          "criticality": "mandatory",
+          "display_group": "phone_essentials"
+        },
+        "ELE-POWER": {
+          "item_id": "ELE-POWER",
+          "item": "Portable Power Bank",
+          "description": "External battery pack (must be in carry-on)",
+          "item_symbol": "battery.100.bolt",
+          "criticality": "optional",
+          "flags": [
+            "lithium_battery"
+          ],
+          "placement": "carry_on_only"
+        },
+        "ELE-LAPTOP-DEVICE": {
+          "item_id": "ELE-LAPTOP-DEVICE",
+          "item": "Laptop/Tablet",
+          "description": "Laptop or tablet computer",
+          "item_symbol": "laptopcomputer",
+          "criticality": "mandatory",
+          "display_group": "laptop_essentials"
+        }
+      }
+    },
+    "MED": {
+      "category": "Medical & Health",
+      "items": {
+        "MED-OTC": {
+          "item_id": "MED-OTC",
+          "item": "OTC Medications",
+          "description": "Pain relief, allergy meds, antacids, etc.",
+          "item_symbol": "pills.fill",
+          "criticality": "recommended"
+        },
+        "MED-BANDAIDS": {
+          "item_id": "MED-BANDAIDS",
+          "item": "Band-Aids",
+          "description": "Adhesive bandages (Band-Aids)",
+          "item_symbol": "bandage.fill",
+          "criticality": "recommended"
+        },
+        "MED-SLEEP-AID": {
+          "item_id": "MED-SLEEP-AID",
+          "item": "Sleep Aid",
+          "description": "Sleep aid (melatonin)",
+          "item_symbol": "moon.zzz.fill",
+          "criticality": "recommended"
+        },
+        "MED-PAIN": {
+          "item_id": "MED-PAIN",
+          "item": "Pain Relievers",
+          "description": "Over-the-counter pain relievers",
+          "item_symbol": "pills.fill",
+          "criticality": "recommended"
+        },
+        "MED-SANITIZER": {
+          "item_id": "MED-SANITIZER",
+          "item": "Hand Sanitizer",
+          "description": "Hand sanitizer (\u22643.4oz for carry-on)",
+          "item_symbol": "hands.sparkles.fill",
+          "criticality": "recommended",
+          "flags": [
+            "tsa_liquid"
+          ]
+        },
+        "MED-FIRSTAID": {
+          "item_id": "MED-FIRSTAID",
+          "item": "First Aid Kit",
+          "description": "Bandages, antiseptic wipes, gauze, etc.",
+          "item_symbol": "cross.case.fill",
+          "criticality": "optional"
+        }
+      }
+    },
+    "TRV": {
+      "category": "Travel Essentials",
+      "items": {
+        "TRV-KEYS": {
+          "item_id": "TRV-KEYS",
+          "item": "Keys",
+          "description": "House keys, car keys, office keys",
+          "item_symbol": "key.fill",
+          "criticality": "mandatory"
+        },
+        "TRV-WALLET": {
+          "item_id": "TRV-WALLET",
+          "item": "Wallet",
+          "description": "Wallet with cards and cash",
+          "item_symbol": "creditcard.fill",
+          "criticality": "mandatory"
+        },
+        "TRV-WATER": {
+          "item_id": "TRV-WATER",
+          "item": "Water Bottle",
+          "description": "Empty reusable bottle (fill after security)",
+          "item_symbol": "drop.fill",
+          "criticality": "optional"
+        },
+        "TRV-CARD": {
+          "item_id": "TRV-CARD",
+          "item": "Bank Cards",
+          "description": "Payment cards (notify bank of travel)",
+          "item_symbol": "creditcard.fill",
+          "criticality": "mandatory"
+        },
+        "TRV-SNACKS": {
+          "item_id": "TRV-SNACKS",
+          "item": "Travel Snacks",
+          "description": "Non-perishable snacks for travel",
+          "item_symbol": "leaf.fill",
+          "criticality": "optional"
+        },
+        "TRV-LUGGAGE": {
+          "item_id": "TRV-LUGGAGE",
+          "item": "Luggage",
+          "description": "Main suitcase or travel bag",
+          "item_symbol": "suitcase.fill",
+          "criticality": "mandatory"
+        }
+      }
+    },
+    "ACT": {
+      "category": "Activities & Recreation",
+      "items": {
+        "ACT-BOOK": {
+          "item_id": "ACT-BOOK",
+          "item": "Books",
+          "description": "Physical books or magazines",
+          "item_symbol": "book.fill",
+          "criticality": "optional"
+        },
+        "ACT-HIKING-BOOTS": {
+          "item_id": "ACT-HIKING-BOOTS",
+          "item": "Hiking Boots",
+          "description": "Sturdy hiking boots or trail shoes",
+          "item_symbol": "figure.hiking",
+          "criticality": "recommended"
+        },
+        "ACT-HIKING-PACK": {
+          "item_id": "ACT-HIKING-PACK",
+          "item": "Hiking Backpack",
+          "description": "Day pack for hiking",
+          "item_symbol": "backpack.fill",
+          "criticality": "recommended"
+        },
+        "ACT-GYM": {
+          "item_id": "ACT-GYM",
+          "item": "Gym Clothes",
+          "description": "Workout clothes and shoes",
+          "item_symbol": "figure.run",
+          "criticality": "optional"
+        },
+        "ACT-YOGA": {
+          "item_id": "ACT-YOGA",
+          "item": "Yoga Mat",
+          "description": "Travel yoga mat",
+          "item_symbol": "figure.mind.and.body",
+          "criticality": "optional"
+        },
+        "ACT-GAMES": {
+          "item_id": "ACT-GAMES",
+          "item": "Travel Games",
+          "description": "Playing cards or compact games",
+          "item_symbol": "gamecontroller.fill",
+          "criticality": "optional"
+        }
+      }
+    }
+  }
+}

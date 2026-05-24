@@ -1,0 +1,114 @@
+rules:
+- id: rule.accessibility.mobility.walking_aids.v1
+  family: wellbeing
+  priority: 172
+  confidence: 0.95
+  enabled: true
+  metadata:
+    generalization_class: safety
+    evidence_type: accessibility
+    context_keys:
+    - special_needs
+  description: Accessibility needs require mobility aids
+  when:
+  - field: facts
+    operator: contains_fact
+    value:
+      predicate: has_special_need
+      args:
+      - Mobility
+  then:
+    emit_items:
+    - item_id: MED-MOBILITY-CANE
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - mobility
+      - accessibility
+      - medical
+      reason: Mobility needs - collapsible walking cane for support
+    - item_id: TRV-ACCESSIBILITY-DOCS
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - mobility
+      - accessibility
+      - documentation
+      reason: Mobility needs - medical documentation for accessibility services
+    emit_tasks:
+    - task.mobility_airline_notification
+    - task.mobility_airport_assistance
+    emit_facts:
+    - predicate: requires_mobility_assistance
+      args:
+      - true
+- id: rule.accessibility.wheelchair.essential_equipment.v1
+  family: wellbeing
+  priority: 175
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: safety_critical
+    evidence_type: accessibility
+    context_keys:
+    - special_needs
+  description: Wheelchair users need essential equipment
+  when:
+  - field: facts
+    operator: contains_fact
+    value:
+      predicate: has_special_need
+      args:
+      - Mobility
+  then:
+    emit_items:
+    - item_id: MED-WHEELCHAIR-CUSHION
+      criticality: recommended
+      placement: any
+      flags:
+      - mobility
+      - accessibility
+      - comfort
+      reason: Wheelchair user - pressure-relief cushion for extended sitting
+    - item_id: MED-TRANSFER-BOARD
+      criticality: recommended
+      placement: any
+      flags:
+      - mobility
+      - accessibility
+      reason: Wheelchair user - transfer board for safe transfers
+    emit_tasks:
+    - task.wheelchair_battery_check
+    - task.wheelchair_dimensions_airline
+- id: rule.accessibility.powered_mobility.charger.v1
+  family: wellbeing
+  priority: 173
+  confidence: 0.98
+  enabled: true
+  metadata:
+    generalization_class: safety_critical
+    evidence_type: necessity
+    context_keys:
+    - special_needs
+  description: Powered mobility devices require charging equipment
+  when:
+  - field: facts
+    operator: contains_fact
+    value:
+      predicate: has_special_need
+      args:
+      - Mobility
+  then:
+    emit_items:
+    - item_id: MED-MOBILITY-CHARGER
+      criticality: mandatory
+      placement: carry_on
+      flags:
+      - mobility
+      - accessibility
+      - electronics
+      reason: Powered mobility device - battery charger critical for independence
+    emit_tasks:
+    - task.mobility_power_adapter_international
+    - task.mobility_backup_battery
+_note: Example rules only (3 of 47). Full rule catalog not released.

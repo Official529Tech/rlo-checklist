@@ -1,0 +1,89 @@
+rules:
+- id: rule.docs.passport_mandatory_international.v1
+  family: regulatory
+  priority: 200
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: safety_critical
+    evidence_type: regulatory
+    context_keys:
+    - travelType
+  description: International travel requires valid passport
+  when:
+  - field: context.travelType
+    operator: ==
+    value: International
+  then:
+    emit_items:
+    - item_id: DOC-PASSPORT
+      criticality: mandatory
+      placement: carry_on
+      flags:
+      - documents
+      - safety_critical
+      reason: International travel requires valid passport
+    emit_facts:
+    - predicate: requires_passport
+      args:
+      - true
+    emit_tasks: []
+- id: rule.docs.id_mandatory_domestic.v1
+  family: regulatory
+  priority: 190
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: safety_critical
+    evidence_type: regulatory
+    context_keys:
+    - travelType
+  description: Domestic air travel requires government-issued ID
+  when:
+  - field: context.travelType
+    operator: ==
+    value: Domestic
+  then:
+    emit_items:
+    - item_id: DOC-ID
+      criticality: mandatory
+      placement: carry_on
+      flags:
+      - documents
+      - safety_critical
+      reason: Domestic air travel requires government-issued ID
+- id: rule.docs.visa_if_required.v1
+  family: regulatory
+  priority: 170
+  confidence: 1.0
+  enabled: true
+  metadata:
+    generalization_class: safety_critical
+    evidence_type: regulatory
+    context_keys:
+    - travelType
+    - destination_requires_visa
+  description: Bring visa documentation if destination requires it
+  when:
+    all:
+    - field: context.travelType
+      operator: ==
+      value: International
+    - field: facts
+      operator: contains_fact
+      value:
+        predicate: destination_requires_visa
+        args:
+        - true
+  then:
+    emit_items:
+    - item_id: DOC-VISA
+      criticality: mandatory
+      placement: carry_on
+      flags:
+      - documents
+      - pretrip
+      reason: Destination requires visa - bring visa documents
+    emit_tasks:
+    - task.verify_visa
+_note: Example rules only (3 of 54). Full rule catalog not released.

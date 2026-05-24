@@ -1,0 +1,5 @@
+{
+  "_note": "Example constraints only.",
+  "version": "1.0",
+  "description": "Environmental sensitivity constraints - temperature, pressure, humidity"
+}

@@ -1,0 +1,540 @@
+{
+  "version": "1.0",
+  "description": "Item properties for packing optimization, derived from item catalog and attributes",
+  "units": {
+    "weight": "grams",
+    "volume": "milliliters",
+    "dimensions": "millimeters",
+    "price": "USD"
+  },
+  "_note": "Example entries only.",
+  "items": {
+    "DOC-PASSPORT": {
+      "weight_grams": 30,
+      "volume_ml": 50,
+      "dimensions_mm": [
+        125,
+        88,
+        5
+      ],
+      "price_usd": 0,
+      "replacement_cost": 200,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "critical",
+      "accessibility_preference": "immediate",
+      "category": "DOC"
+    },
+    "DOC-ID": {
+      "weight_grams": 5,
+      "volume_ml": 10,
+      "dimensions_mm": [
+        86,
+        54,
+        1
+      ],
+      "price_usd": 0,
+      "replacement_cost": 50,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "critical",
+      "accessibility_preference": "immediate",
+      "category": "DOC"
+    },
+    "DOC-VISA": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "dimensions_mm": [
+        210,
+        148,
+        1
+      ],
+      "price_usd": 0,
+      "replacement_cost": 300,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "critical",
+      "accessibility_preference": "immediate",
+      "category": "DOC"
+    },
+    "DOC-BOOKING": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "dimensions_mm": [
+        210,
+        148,
+        1
+      ],
+      "price_usd": 0,
+      "replacement_cost": 0,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "immediate",
+      "category": "DOC"
+    },
+    "DOC-INSURANCE": {
+      "weight_grams": 10,
+      "volume_ml": 20,
+      "dimensions_mm": [
+        210,
+        148,
+        1
+      ],
+      "price_usd": 0,
+      "replacement_cost": 0,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "medium",
+      "accessibility_preference": "immediate",
+      "category": "DOC"
+    },
+    "ELE-PHONE-HANDSET": {
+      "weight_grams": 180,
+      "volume_ml": 100,
+      "dimensions_mm": [
+        160,
+        78,
+        8
+      ],
+      "price_usd": 800,
+      "replacement_cost": 800,
+      "fragility": "high",
+      "spillage_risk": false,
+      "temperature_sensitive": true,
+      "pressure_sensitive": false,
+      "value_tier": "high",
+      "accessibility_preference": "immediate",
+      "category": "ELE"
+    },
+    "ELE-PHONE-CHARGER": {
+      "weight_grams": 120,
+      "volume_ml": 150,
+      "dimensions_mm": [
+        70,
+        70,
+        30
+      ],
+      "price_usd": 20,
+      "replacement_cost": 30,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "limited",
+      "category": "ELE"
+    },
+    "ELE-LAPTOP-DEVICE": {
+      "weight_grams": 1400,
+      "volume_ml": 2500,
+      "dimensions_mm": [
+        330,
+        230,
+        18
+      ],
+      "price_usd": 1200,
+      "replacement_cost": 1500,
+      "fragility": "high",
+      "spillage_risk": false,
+      "temperature_sensitive": true,
+      "pressure_sensitive": false,
+      "value_tier": "high",
+      "accessibility_preference": "limited",
+      "category": "ELE"
+    },
+    "ELE-POWER": {
+      "weight_grams": 300,
+      "volume_ml": 250,
+      "dimensions_mm": [
+        140,
+        70,
+        25
+      ],
+      "price_usd": 40,
+      "replacement_cost": 50,
+      "fragility": "medium",
+      "spillage_risk": false,
+      "temperature_sensitive": true,
+      "pressure_sensitive": false,
+      "value_tier": "medium",
+      "accessibility_preference": "limited",
+      "category": "ELE",
+      "notes": "Power bank - lithium battery, carry-on only per FAA"
+    },
+    "ELE-HEADPHONES": {
+      "weight_grams": 200,
+      "volume_ml": 300,
+      "dimensions_mm": [
+        200,
+        180,
+        80
+      ],
+      "price_usd": 150,
+      "replacement_cost": 180,
+      "fragility": "medium",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "medium",
+      "accessibility_preference": "immediate",
+      "category": "ELE"
+    },
+    "CLO-UNDERWEAR": {
+      "weight_grams": 50,
+      "volume_ml": 200,
+      "dimensions_mm": [
+        150,
+        100,
+        15
+      ],
+      "price_usd": 15,
+      "replacement_cost": 15,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "CLO"
+    },
+    "CLO-SOCKS": {
+      "weight_grams": 40,
+      "volume_ml": 150,
+      "dimensions_mm": [
+        120,
+        80,
+        15
+      ],
+      "price_usd": 10,
+      "replacement_cost": 10,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "CLO"
+    },
+    "CLO-TSHIRT": {
+      "weight_grams": 150,
+      "volume_ml": 500,
+      "dimensions_mm": [
+        250,
+        200,
+        10
+      ],
+      "price_usd": 20,
+      "replacement_cost": 25,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "CLO"
+    },
+    "CLO-PANTS": {
+      "weight_grams": 400,
+      "volume_ml": 1500,
+      "dimensions_mm": [
+        300,
+        250,
+        20
+      ],
+      "price_usd": 40,
+      "replacement_cost": 50,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "CLO"
+    },
+    "CLO-DRESS-SHIRT": {
+      "weight_grams": 200,
+      "volume_ml": 700,
+      "dimensions_mm": [
+        300,
+        250,
+        10
+      ],
+      "price_usd": 35,
+      "replacement_cost": 45,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "CLO",
+      "notes": "Wrinkle-prone, separate from liquids"
+    },
+    "PER-TOOTHBRUSH": {
+      "weight_grams": 20,
+      "volume_ml": 50,
+      "dimensions_mm": [
+        200,
+        20,
+        15
+      ],
+      "price_usd": 3,
+      "replacement_cost": 5,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "PER"
+    },
+    "PER-TOOTHPASTE": {
+      "weight_grams": 100,
+      "volume_ml": 100,
+      "dimensions_mm": [
+        150,
+        40,
+        30
+      ],
+      "price_usd": 4,
+      "replacement_cost": 5,
+      "fragility": "low",
+      "spillage_risk": true,
+      "temperature_sensitive": false,
+      "pressure_sensitive": true,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "PER",
+      "notes": "Liquid/gel - TSA 3-1-1 in carry-on"
+    },
+    "PER-DEODORANT": {
+      "weight_grams": 80,
+      "volume_ml": 85,
+      "dimensions_mm": [
+        120,
+        50,
+        30
+      ],
+      "price_usd": 5,
+      "replacement_cost": 6,
+      "fragility": "low",
+      "spillage_risk": true,
+      "temperature_sensitive": false,
+      "pressure_sensitive": true,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "PER",
+      "notes": "Aerosol - pressure sensitive, may leak in cargo"
+    },
+    "PER-GLASSES": {
+      "weight_grams": 30,
+      "volume_ml": 200,
+      "dimensions_mm": [
+        160,
+        60,
+        40
+      ],
+      "price_usd": 150,
+      "replacement_cost": 200,
+      "fragility": "high",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "high",
+      "accessibility_preference": "immediate",
+      "category": "PER"
+    },
+    "MED-OTC": {
+      "weight_grams": 150,
+      "volume_ml": 250,
+      "dimensions_mm": [
+        120,
+        80,
+        40
+      ],
+      "price_usd": 20,
+      "replacement_cost": 25,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "limited",
+      "category": "MED"
+    },
+    "MED-FIRSTAID": {
+      "weight_grams": 200,
+      "volume_ml": 400,
+      "dimensions_mm": [
+        150,
+        100,
+        50
+      ],
+      "price_usd": 25,
+      "replacement_cost": 30,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "medium",
+      "accessibility_preference": "limited",
+      "category": "MED"
+    },
+    "MED-SANITIZER": {
+      "weight_grams": 100,
+      "volume_ml": 100,
+      "dimensions_mm": [
+        100,
+        40,
+        40
+      ],
+      "price_usd": 3,
+      "replacement_cost": 5,
+      "fragility": "low",
+      "spillage_risk": true,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "immediate",
+      "category": "MED"
+    },
+    "TRV-WALLET": {
+      "weight_grams": 100,
+      "volume_ml": 150,
+      "dimensions_mm": [
+        110,
+        90,
+        20
+      ],
+      "price_usd": 30,
+      "replacement_cost": 50,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "critical",
+      "accessibility_preference": "immediate",
+      "category": "TRV"
+    },
+    "TRV-CARD": {
+      "weight_grams": 5,
+      "volume_ml": 5,
+      "dimensions_mm": [
+        86,
+        54,
+        1
+      ],
+      "price_usd": 0,
+      "replacement_cost": 0,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "critical",
+      "accessibility_preference": "immediate",
+      "category": "TRV"
+    },
+    "TRV-SNACKS": {
+      "weight_grams": 200,
+      "volume_ml": 400,
+      "dimensions_mm": [
+        200,
+        150,
+        50
+      ],
+      "price_usd": 10,
+      "replacement_cost": 15,
+      "fragility": "medium",
+      "spillage_risk": false,
+      "temperature_sensitive": true,
+      "pressure_sensitive": true,
+      "value_tier": "low",
+      "accessibility_preference": "immediate",
+      "category": "TRV"
+    },
+    "TRV-WATER": {
+      "weight_grams": 150,
+      "volume_ml": 500,
+      "dimensions_mm": [
+        220,
+        70,
+        70
+      ],
+      "price_usd": 15,
+      "replacement_cost": 20,
+      "fragility": "low",
+      "spillage_risk": true,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "immediate",
+      "category": "TRV",
+      "notes": "Empty bottle through security, fill after"
+    },
+    "ACT-HIKING-BOOTS": {
+      "weight_grams": 1200,
+      "volume_ml": 4000,
+      "dimensions_mm": [
+        320,
+        140,
+        150
+      ],
+      "price_usd": 120,
+      "replacement_cost": 150,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "medium",
+      "accessibility_preference": "none",
+      "category": "ACT"
+    },
+    "ACT-YOGA": {
+      "weight_grams": 800,
+      "volume_ml": 2000,
+      "dimensions_mm": [
+        600,
+        150,
+        150
+      ],
+      "price_usd": 40,
+      "replacement_cost": 50,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "none",
+      "category": "ACT"
+    },
+    "ACT-BOOK": {
+      "weight_grams": 400,
+      "volume_ml": 800,
+      "dimensions_mm": [
+        210,
+        150,
+        30
+      ],
+      "price_usd": 15,
+      "replacement_cost": 20,
+      "fragility": "low",
+      "spillage_risk": false,
+      "temperature_sensitive": false,
+      "pressure_sensitive": false,
+      "value_tier": "low",
+      "accessibility_preference": "immediate",
+      "category": "ACT"
+    }
+  }
+}

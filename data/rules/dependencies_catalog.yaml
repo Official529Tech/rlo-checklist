@@ -1,0 +1,120 @@
+rules:
+- id: rule.intent.photography_to_camera.v1
+  family: activity_inference
+  priority: 150
+  confidence: 0.9
+  enabled: true
+  metadata:
+    generalization_class: intent_inference
+    evidence_type: statistical_correlation
+    context_keys:
+    - activities
+    - purpose
+  description: Photography activity implies need for camera
+  when:
+    any:
+    - field: context.activities
+      operator: contains
+      value: photography
+    - field: context.purpose
+      operator: ==
+      value: Photography
+  then:
+    emit_facts:
+    - predicate: want_camera
+      args:
+      - true
+- id: rule.bundle.camera.emit_camera.v1
+  family: dependency_electronics
+  priority: 149
+  confidence: 0.9
+  enabled: true
+  metadata:
+    generalization_class: activity_equipment
+    evidence_type: expert_knowledge
+    context_keys:
+    - want_camera
+  description: If camera is wanted, emit camera gear (atomic items)
+  when:
+    all:
+    - field: facts
+      operator: contains_fact
+      value:
+        predicate: want_camera
+        args:
+        - true
+  then:
+    emit_items:
+    - item_id: ELE-CAM-BODY
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - electronics
+      - camera_gear
+      reason: Photography activity - camera body essential
+    - item_id: ELE-CAM-MEM
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - electronics
+      - camera_gear
+      reason: Photography activity - memory card for storage
+    - item_id: ELE-CAM-BATT
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - electronics
+      - camera_gear
+      reason: Photography activity - battery for camera
+    - item_id: ELE-CAM-CHARGER
+      criticality: recommended
+      placement: carry_on
+      flags:
+      - electronics
+      - camera_gear
+      reason: Photography activity - charger for multi-day trips
+    emit_facts:
+    - predicate: selected
+      args:
+      - ELE-CAM-BODY
+    - predicate: has_electronics
+      args:
+      - true
+- id: rule.bundle.camera.requires_adapter_international.v1
+  family: dependency_electronics
+  priority: 148
+  confidence: 0.85
+  enabled: true
+  metadata:
+    generalization_class: dependency
+    evidence_type: expert_knowledge
+    context_keys:
+    - travelType
+    - selected
+  description: Camera in international travel needs power adapter
+  when:
+    all:
+    - field: context.travelType
+      operator: ==
+      value: International
+    - field: facts
+      operator: contains_fact
+      value:
+        predicate: selected
+        args:
+        - ELE-CAM-BODY
+  then:
+    emit_items:
+    - item_id: ELE-ADAPT
+      criticality: recommended
+      placement: any
+      flags:
+      - electronics
+      - dependency
+      - camera_gear
+      reason: International travel + camera - adapter ensures charging compatibility
+    emit_facts:
+    - predicate: selected
+      args:
+      - ELE-ADAPT
+_note: Example rules only (3 of 7). Full rule catalog not released.
